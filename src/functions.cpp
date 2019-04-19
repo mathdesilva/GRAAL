@@ -2,47 +2,47 @@
 
 namespace graal{
 
-	const void * min( const void * first, const void * last, size_t size, Compare cmp )
+	const void * min( const void * first, const void * last, std::size_t size, Compare cmp )
 	{
 		// TODO: implement the function
 	}
 
-	void reverse( void * first, void * last, size_t size )
+	void reverse( void * first, void * last, std::size_t size )
 	{
 		// TODO: implement the function
 	}
 
-	void * copy( const void * first, const void * last, const void * d_first, size_t size )
+	void * copy( const void * first, const void * last, const void * d_first, std::size_t size )
 	{
 		// TODO: implement the function
 	}
 
-	void * clone( const void * first, const void * last, size_t size )
+	void * clone( const void * first, const void * last, std::size_t size )
 	{
 		// TODO: implement the function
 	}
 
-	const void * find_if( const void * first, const void * last, size_t size, Predicate p )
+	const void * find_if( const void * first, const void * last, std::size_t size, Predicate p )
 	{
 		// TODO: implement the function
 	}
 
-	const void * find( const void * first, const void * last, size_t size, const void * value, Equal eq )
+	const void * find( const void * first, const void * last, std::size_t size, const void * value, Equal eq )
 	{
 		// TODO: implement the function
 	}
 
-	bool all_of( const void * first, const void * last, size_t size, Predicate p )
+	bool all_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
 		// TODO: implement the function
 	}
 
-	bool any_of( const void * first, const void * last, size_t size, Predicate p )
+	bool any_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
 		// TODO: implement the function
 	}
 
-	bool none_of( const void * first, const void * last, size_t size, Predicate p )
+	bool none_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
 		// TODO: implement the function
 	}
@@ -57,17 +57,17 @@ namespace graal{
 		// TODO: implement the function
 	}
 
-	void * unique( void * first, void * last, size_t size, Equal eq )
+	void * unique( void * first, void * last, std::size_t size, Equal eq )
 	{
 		// TODO: implement the function
 	}
 
-	void * partition( void * first, void * last, size_t size, Predicate p)
+	void * partition( void * first, void * last, std::size_t size, Predicate p)
 	{
 		// TODO: implement the function
 	}
 
-	void * sort( void * first, size_t count, size_t size, Compare cmp )
+	void * sort( void * first, std::size_t count, std::size_t size, Compare cmp )
 	{
 		// TODO: implement the function
 	}
