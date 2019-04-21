@@ -2,7 +2,9 @@
 #define _FUNCTIONS_H_
 
 #include <iostream>
+#include <cstring>
 
+using byte = unsigned char;
 using Compare = bool (*)(const void *, const void *);
 using Predicate = bool (*)(const void *);
 using Equal = bool (*)(const void *, const void *);

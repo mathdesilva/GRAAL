@@ -4,7 +4,29 @@ namespace graal{
 
 	const void * min( const void * first, const void * last, std::size_t size, Compare cmp )
 	{
-		// TODO: implement the function
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		byte smallest[ size ];
+		byte aux[ size ];
+
+		void * res = pfirst;
+
+		std::memcpy( smallest, pfirst, size );
+
+		while( pfirst < plast )
+		{
+			std::memcpy( aux, pfirst, size );
+
+			if( cmp( aux, smallest ) )
+			{	
+				std::memcpy( smallest, pfirst, size );
+				res = pfirst;
+			}
+
+			pfirst += size;
+		}
+
+		return res;
 	}
 
 	void reverse( void * first, void * last, std::size_t size )
