@@ -31,7 +31,20 @@ namespace graal{
 
 	void reverse( void * first, void * last, std::size_t size )
 	{
-		// TODO: implement the function
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		byte aux[ size ];
+		
+		plast -= size;
+		while( pfirst < plast )
+		{
+			std::memcpy( aux, pfirst, size );
+			std::memcpy( pfirst, plast, size );
+			std::memcpy( plast, aux, size );
+
+			pfirst += size;
+			plast -= size;
+		}
 	}
 
 	void * copy( const void * first, const void * last, const void * d_first, std::size_t size )
@@ -93,5 +106,4 @@ namespace graal{
 	{
 		// TODO: implement the function
 	}
-
 }
