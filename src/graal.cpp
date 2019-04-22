@@ -207,8 +207,25 @@ namespace graal{
 
 	bool equal( const void * first1, const void * last1, const void * first2, const void * last2, std::size_t size, Equal eq )
 	{
-		// TODO: implement the function
-		return true;
+		byte * pfirst1 = (byte *) first1;
+		byte * plast1 = (byte *) last1;
+		byte * pfirst2 = (byte *) first2;
+		byte * plast2 = (byte *) last2;
+		bool res = true;
+
+		while( pfirst1 < plast1 and pfirst2 < plast2 )
+		{
+			if( not eq( pfirst1, pfirst2 ) )
+			{
+				res = false;
+				break;
+			}
+
+			pfirst1 += size;
+			pfirst2 += size;
+		}
+
+		return res;
 	}
 
 	void * unique( void * first, void * last, std::size_t size, Equal eq )

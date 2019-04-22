@@ -316,67 +316,67 @@ TEST(IntRange, PartAreNotEqualType1)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* IntRange -> type2 equal() tests {{{*/
-// TEST(IntRange, AllAreEqualType2)
-// {
-//     int A[]{ 'a', 'c', 'b', 'd', 'g' };
-//     int A_E[]{ 'a', 'c', 'b', 'd', 'g' };
+/* IntRange -> type2 equal() tests {{{*/
+TEST(IntRange, AllAreEqualType2)
+{
+    int A[]{ 'a', 'c', 'b', 'd', 'g' };
+    int A_E[]{ 'a', 'c', 'b', 'd', 'g' };
 
-//     bool result;
-//     result = graal::equal( std::begin(A),
-//                            std::end(A),
-//                            std::begin(A_E),
-//                            std::end(A_E),
-//                            sizeof(A[0]),
-//                            INT_equal_to );
-//     ASSERT_TRUE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A),
+                           std::end(A),
+                           std::begin(A_E),
+                           std::end(A_E),
+                           sizeof(A[0]),
+                           INT_equal_to );
+    ASSERT_TRUE( result );
+}
 
-// TEST(IntRange, AllAreNotEqualType2)
-// {
-//     int A[]{ 'a', 'c', 'b', 'd', 'g' };
-//     int A_E[]{ 'a', 'h', 'b', 'd', 'g' };
+TEST(IntRange, AllAreNotEqualType2)
+{
+    int A[]{ 'a', 'c', 'b', 'd', 'g' };
+    int A_E[]{ 'a', 'h', 'b', 'd', 'g' };
 
-//     bool result;
-//     result = graal::equal( std::begin(A),
-//                            std::end(A),
-//                            std::begin(A_E),
-//                            std::end(A_E),
-//                            sizeof(A[0]),
-//                            INT_equal_to );
-//     ASSERT_FALSE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A),
+                           std::end(A),
+                           std::begin(A_E),
+                           std::end(A_E),
+                           sizeof(A[0]),
+                           INT_equal_to );
+    ASSERT_FALSE( result );
+}
 
-// TEST(IntRange, PartAreEqualType2)
-// {
-//     int A[]{ 'a', 'c', 'b', 'd', 'e', 'g' };
-//     int A_E[]{ 'l', 'c', 'b', 'd', 'e', 'h' };
+TEST(IntRange, PartAreEqualType2)
+{
+    int A[]{ 'a', 'c', 'b', 'd', 'e', 'g' };
+    int A_E[]{ 'l', 'c', 'b', 'd', 'e', 'h' };
 
-//     bool result;
-//     result = graal::equal( std::begin(A)+1,
-//                            std::begin(A)+5,
-//                            std::begin(A_E)+1,
-//                            std::begin(A_E)+5,
-//                            sizeof(A[0]),
-//                            INT_equal_to );
-//     ASSERT_TRUE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A)+1,
+                           std::begin(A)+5,
+                           std::begin(A_E)+1,
+                           std::begin(A_E)+5,
+                           sizeof(A[0]),
+                           INT_equal_to );
+    ASSERT_TRUE( result );
+}
 
-// TEST(IntRange, PartAreNotEqualType2)
-// {
-//     int A[]{ 'a', 'c', 'b', 'd', 'e', 'g' };
-//     int A_E[]{ 'l', 'c', 'b', 'd', 'f', 'h' };
+TEST(IntRange, PartAreNotEqualType2)
+{
+    int A[]{ 'a', 'c', 'b', 'd', 'e', 'g' };
+    int A_E[]{ 'l', 'c', 'b', 'd', 'f', 'h' };
 
-//     bool result;
-//     result = graal::equal( std::begin(A)+1,
-//                            std::begin(A)+5,
-//                            std::begin(A_E)+1,
-//                            std::begin(A_E)+5,
-//                            sizeof(A[0]),
-//                            INT_equal_to );
-//     ASSERT_FALSE( result );
-// }
-// /*}}}*/
+    bool result;
+    result = graal::equal( std::begin(A)+1,
+                           std::begin(A)+5,
+                           std::begin(A_E)+1,
+                           std::begin(A_E)+5,
+                           sizeof(A[0]),
+                           INT_equal_to );
+    ASSERT_FALSE( result );
+}
+/*}}}*/
 // /* IntRange -> unique() tests {{{ */
 // TEST(IntRange, UniqueAllAre)
 // {
@@ -851,67 +851,67 @@ TEST(CharRange, PartAreNotEqualType1)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* CharRange -> type2 equal() tests {{{*/
-// TEST(CharRange, AllAreEqualType2)
-// {
-//     char A[]{ 'a', 'c', 'b', 'd', 'g' };
-//     char A_E[]{ 'a', 'c', 'b', 'd', 'g' };
+/* CharRange -> type2 equal() tests {{{*/
+TEST(CharRange, AllAreEqualType2)
+{
+    char A[]{ 'a', 'c', 'b', 'd', 'g' };
+    char A_E[]{ 'a', 'c', 'b', 'd', 'g' };
 
-//     bool result;
-//     result = graal::equal( std::begin(A),
-//                            std::end(A),
-//                            std::begin(A_E),
-//                            std::end(A_E),
-//                            sizeof(A[0]),
-//                            CHAR_equal_to );
-//     ASSERT_TRUE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A),
+                           std::end(A),
+                           std::begin(A_E),
+                           std::end(A_E),
+                           sizeof(A[0]),
+                           CHAR_equal_to );
+    ASSERT_TRUE( result );
+}
 
-// TEST(CharRange, AllAreNotEqualType2)
-// {
-//     char A[]{ 'a', 'c', 'b', 'd', 'g' };
-//     char A_E[]{ 'a', 'h', 'b', 'd', 'g' };
+TEST(CharRange, AllAreNotEqualType2)
+{
+    char A[]{ 'a', 'c', 'b', 'd', 'g' };
+    char A_E[]{ 'a', 'h', 'b', 'd', 'g' };
 
-//     bool result;
-//     result = graal::equal( std::begin(A),
-//                            std::end(A),
-//                            std::begin(A_E),
-//                            std::end(A_E),
-//                            sizeof(A[0]),
-//                            CHAR_equal_to );
-//     ASSERT_FALSE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A),
+                           std::end(A),
+                           std::begin(A_E),
+                           std::end(A_E),
+                           sizeof(A[0]),
+                           CHAR_equal_to );
+    ASSERT_FALSE( result );
+}
 
-// TEST(CharRange, PartAreEqualType2)
-// {
-//     char A[]{ 'a', 'c', 'b', 'd', 'e', 'g' };
-//     char A_E[]{ 'l', 'c', 'b', 'd', 'e', 'h' };
+TEST(CharRange, PartAreEqualType2)
+{
+    char A[]{ 'a', 'c', 'b', 'd', 'e', 'g' };
+    char A_E[]{ 'l', 'c', 'b', 'd', 'e', 'h' };
 
-//     bool result;
-//     result = graal::equal( std::begin(A)+1,
-//                            std::begin(A)+5,
-//                            std::begin(A_E)+1,
-//                            std::begin(A_E)+5,
-//                            sizeof(A[0]),
-//                            CHAR_equal_to );
-//     ASSERT_TRUE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A)+1,
+                           std::begin(A)+5,
+                           std::begin(A_E)+1,
+                           std::begin(A_E)+5,
+                           sizeof(A[0]),
+                           CHAR_equal_to );
+    ASSERT_TRUE( result );
+}
 
-// TEST(CharRange, PartAreNotEqualType2)
-// {
-//     char A[]{ 'a', 'c', 'b', 'd', 'e', 'g' };
-//     char A_E[]{ 'l', 'c', 'b', 'd', 'f', 'h' };
+TEST(CharRange, PartAreNotEqualType2)
+{
+    char A[]{ 'a', 'c', 'b', 'd', 'e', 'g' };
+    char A_E[]{ 'l', 'c', 'b', 'd', 'f', 'h' };
 
-//     bool result;
-//     result = graal::equal( std::begin(A)+1,
-//                            std::begin(A)+5,
-//                            std::begin(A_E)+1,
-//                            std::begin(A_E)+5,
-//                            sizeof(A[0]),
-//                            CHAR_equal_to );
-//     ASSERT_FALSE( result );
-// }
-// /*}}}*/
+    bool result;
+    result = graal::equal( std::begin(A)+1,
+                           std::begin(A)+5,
+                           std::begin(A_E)+1,
+                           std::begin(A_E)+5,
+                           sizeof(A[0]),
+                           CHAR_equal_to );
+    ASSERT_FALSE( result );
+}
+/*}}}*/
 // /* CharRange -> unique() tests {{{ */
 // TEST(CharRange, UniqueAllAre)
 // {
@@ -1284,66 +1284,66 @@ TEST(StringRange, PartAreNotEqualType1)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* StringRange -> type2 equal() tests {{{*/
-// TEST(StringRange, AllAreEqualType2)
-// {
-//     std::string A[]{ "aa", "cc", "bb", "dd", "gg" };
-//     std::string A_E[]{ "aa", "cc", "bb", "dd", "gg" };
+/* StringRange -> type2 equal() tests {{{*/
+TEST(StringRange, AllAreEqualType2)
+{
+    std::string A[]{ "aa", "cc", "bb", "dd", "gg" };
+    std::string A_E[]{ "aa", "cc", "bb", "dd", "gg" };
 
-//     bool result;
-//     result = graal::equal( std::begin(A),
-//                            std::end(A),
-//                            std::begin(A_E),
-//                            std::end(A_E),
-//                            sizeof(A[0]),
-//                            STR_equal_to );
-//     ASSERT_TRUE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A),
+                           std::end(A),
+                           std::begin(A_E),
+                           std::end(A_E),
+                           sizeof(A[0]),
+                           STR_equal_to );
+    ASSERT_TRUE( result );
+}
 
-// TEST(StringRange, AllAreNotEqualType2)
-// {
-//     std::string A[]{ "aa", "cc", "bb", "dd", "gg" };
-//     std::string A_E[]{ "aa", "hh", "bb", "dd", "gg" };
+TEST(StringRange, AllAreNotEqualType2)
+{
+    std::string A[]{ "aa", "cc", "bb", "dd", "gg" };
+    std::string A_E[]{ "aa", "hh", "bb", "dd", "gg" };
 
-//     bool result;
-//     result = graal::equal( std::begin(A),
-//                            std::end(A),
-//                            std::begin(A_E),
-//                            std::end(A_E),
-//                            sizeof(A[0]),
-//                            STR_equal_to );
-//     ASSERT_FALSE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A),
+                           std::end(A),
+                           std::begin(A_E),
+                           std::end(A_E),
+                           sizeof(A[0]),
+                           STR_equal_to );
+    ASSERT_FALSE( result );
+}
 
-// TEST(StringRange, PartAreEqualType2)
-// {
-//     std::string A[]{ "aa", "cc", "bb", "dd", "ee", "gg" };
-//     std::string A_E[]{ "ll", "cc", "bb", "dd", "ee", "hh" };
+TEST(StringRange, PartAreEqualType2)
+{
+    std::string A[]{ "aa", "cc", "bb", "dd", "ee", "gg" };
+    std::string A_E[]{ "ll", "cc", "bb", "dd", "ee", "hh" };
 
-//     bool result;
-//     result = graal::equal( std::begin(A)+1,
-//                            std::begin(A)+5,
-//                            std::begin(A_E)+1,
-//                            std::begin(A_E)+5,
-//                            sizeof(A[0]),
-//                            STR_equal_to );
-//     ASSERT_TRUE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A)+1,
+                           std::begin(A)+5,
+                           std::begin(A_E)+1,
+                           std::begin(A_E)+5,
+                           sizeof(A[0]),
+                           STR_equal_to );
+    ASSERT_TRUE( result );
+}
 
-// TEST(StringRange, PartAreNotEqualType2)
-// {
-//     std::string A[]{ "aa", "cc", "bb", "dd", "ee", "gg" };
-//     std::string A_E[]{ "ll", "cc", "bb", "dd", "ff", "hh" };
+TEST(StringRange, PartAreNotEqualType2)
+{
+    std::string A[]{ "aa", "cc", "bb", "dd", "ee", "gg" };
+    std::string A_E[]{ "ll", "cc", "bb", "dd", "ff", "hh" };
 
-//     bool result;
-//     result = graal::equal( std::begin(A)+1,
-//                            std::begin(A)+5,
-//                            std::begin(A_E)+1,
-//                            std::begin(A_E)+5,
-//                            sizeof(A[0]),
-//                            STR_equal_to );
-//     ASSERT_FALSE( result );
-// }
+    bool result;
+    result = graal::equal( std::begin(A)+1,
+                           std::begin(A)+5,
+                           std::begin(A_E)+1,
+                           std::begin(A_E)+5,
+                           sizeof(A[0]),
+                           STR_equal_to );
+    ASSERT_FALSE( result );
+}
 /*}}}*/
 /*}}}*/
 
