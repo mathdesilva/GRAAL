@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "graal.h"
 
 namespace graal{
 
@@ -125,8 +125,22 @@ namespace graal{
 
 	bool all_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
-		// TODO: implement the function
-		return true;
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		bool res = true;
+
+		while( pfirst < plast )
+		{
+			if( not p( pfirst ) )
+			{
+				res = false;
+				break;
+			}
+
+			pfirst += size;
+		}
+
+		return res;
 	}
 
 	bool any_of( const void * first, const void * last, std::size_t size, Predicate p )

@@ -1,5 +1,5 @@
-#ifndef _FUNCTIONS_H_
-#define _FUNCTIONS_H_
+#ifndef _GRAAL_H_
+#define _GRAAL_H_
 
 #include <iostream>
 #include <cstring>

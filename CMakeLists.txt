@@ -25,7 +25,7 @@ include_directories( include )
 #set(SOURCES src/filter.cpp src/timing_filter.cpp)
 
 # We want to build a static library.
-add_library(graal STATIC "src/functions.cpp")
+add_library(graal STATIC "src/graal.cpp")
 
 #define C++11 as the standard.
 #target_compile_features(iranges PUBLIC cxx_std_11)
