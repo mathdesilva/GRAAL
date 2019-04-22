@@ -96,8 +96,22 @@ int main( void )
 	auto result3_2 = graal::copy( arr3_0.begin(), arr3_0.end() - 2, arr3_2.begin() + 3, sizeof(int) );
 	std::cout << "Result: ";
 	printArray( arr3_2.begin(), arr3_2.end(), sizeof(int) );
-	std::cout << " return address index: " << ((int *)result3_2 - arr3_2.begin()) << std::endl;
+	std::cout << " return address index: " << ((int *)result3_2 - arr3_2.begin()) << std::endl << std::endl;
 
 
-	return 0;
+// ============================================================================
+//                                                      4 - CLONE FUNCTION TEST
+// ============================================================================
+	std::cout << ">>> TEST 4: clone function\n";
+	std::array < int, 10 > arr4 = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+	std::cout << "Using int arrays: ";
+	printArray( arr4.begin(), arr4.end(), sizeof(int) );
+	std::cout << std::endl;
+	auto result4 = graal::clone( arr4.begin(), arr4.end(), sizeof(int) );
+	std::cout << "Result: ";
+	printArray( result4, (int *)result4 + arr4.size(), sizeof(int) );
+	std::cout << std::endl;
+	delete[] (int *)result4;
+
+	return EXIT_SUCCESS;
 }	

@@ -68,7 +68,23 @@ namespace graal{
 
 	void * clone( const void * first, const void * last, std::size_t size )
 	{
-		// TODO: implement the function
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		const int n_bytes = plast - pfirst;
+
+		byte * clone = new byte [n_bytes];
+		byte * aux = (byte *) &clone[0];
+		void * res = aux;
+
+		while( pfirst < plast)
+		{
+			std::memcpy( aux, pfirst, size );
+
+			aux += size;
+			pfirst += size;
+		}
+
+		return res;
 	}
 
 	const void * find_if( const void * first, const void * last, std::size_t size, Predicate p )
