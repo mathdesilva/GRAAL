@@ -27,8 +27,8 @@ namespace graal{
 	bool any_of( const void * first, const void * last, std::size_t size, Predicate p );
 	bool none_of( const void * first, const void * last, std::size_t size, Predicate p );
 
-	bool equal( const void * first1, const void * last1, const void * first2, Equal eq );
-	bool equal( const void * first1, const void * last1, const void * first2, const void * last2, Equal eq );
+	bool equal( const void * first1, const void * last1, const void * first2, std::size_t size, Equal eq );
+	bool equal( const void * first1, const void * last1, const void * first2, const void * last2, std::size_t size, Equal eq );
 
 	void * unique( void * first, void * last, std::size_t size, Equal eq );
 
