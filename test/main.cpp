@@ -248,25 +248,25 @@ TEST(IntRange, AnyOfAreNotBiggerThan)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* IntRange -> none_of() tests {{{*/
-// TEST(IntRange, NoneOfAreBiggerThan)
-// {
-//     int A[]{ 1, 1, 1, 1, 1, 1, 1 };
-//     bool result;
+/* IntRange -> none_of() tests {{{*/
+TEST(IntRange, NoneOfAreBiggerThan)
+{
+    int A[]{ 1, 1, 1, 1, 1, 1, 1 };
+    bool result;
 
-//     result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), INT_bigg_than );
-//     ASSERT_TRUE( result );
-// }
+    result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), INT_bigg_than );
+    ASSERT_TRUE( result );
+}
 
-// TEST(IntRange, NoneOfAreNotBiggerThan)
-// {
-//     int A[]{ 1, 1, 1, 1, 10, 1, 1, 1, 1 };
-//     bool result;
+TEST(IntRange, NoneOfAreNotBiggerThan)
+{
+    int A[]{ 1, 1, 1, 1, 10, 1, 1, 1, 1 };
+    bool result;
 
-//     result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), INT_bigg_than );
-//     ASSERT_FALSE( result );
-// }
-// /*}}}*/
+    result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), INT_bigg_than );
+    ASSERT_FALSE( result );
+}
+/*}}}*/
 // /* IntRange -> type1 equal() tests {{{*/
 // TEST(IntRange, AllAreEqualType1)
 // {
@@ -783,25 +783,25 @@ TEST(CharRange, AnyOfAreNotBiggerThan)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* CharRange -> none_of() tests {{{*/
-// TEST(CharRange, NoneOfAreBiggerThan)
-// {
-//     char A[]{ 'a', 'a', 'a', 'a', 'a', 'a', 'a', };
-//     bool result;
+/* CharRange -> none_of() tests {{{*/
+TEST(CharRange, NoneOfAreBiggerThan)
+{
+    char A[]{ 'a', 'a', 'a', 'a', 'a', 'a', 'a', };
+    bool result;
 
-//     result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), CHAR_bigg_than );
-//     ASSERT_TRUE( result );
-// }
+    result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), CHAR_bigg_than );
+    ASSERT_TRUE( result );
+}
 
-// TEST(CharRange, NoneOfAreNotBiggerThan)
-// {
-//     char A[]{ 'a', 'a', 'a', 'z', 'a', 'a', 'a', };
-//     bool result;
+TEST(CharRange, NoneOfAreNotBiggerThan)
+{
+    char A[]{ 'a', 'a', 'a', 'z', 'a', 'a', 'a', };
+    bool result;
 
-//     result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), CHAR_bigg_than );
-//     ASSERT_FALSE( result );
-// }
-// /*}}}*/
+    result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), CHAR_bigg_than );
+    ASSERT_FALSE( result );
+}
+/*}}}*/
 // /* CharRange -> type1 equal() tests {{{*/
 // TEST(CharRange, AllAreEqualType1)
 // {
@@ -1216,25 +1216,25 @@ TEST(StringRange, AnyOfAreNotBiggerThan)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* StringRange -> none_of() tests {{{*/
-// TEST(StringRange, NoneOfAreBiggerThan)
-// {
-//     std::string A[]{ "aa", "aa", "aa", "aa", "aa" };
-//     bool result;
+/* StringRange -> none_of() tests {{{*/
+TEST(StringRange, NoneOfAreBiggerThan)
+{
+    std::string A[]{ "aa", "aa", "aa", "aa", "aa" };
+    bool result;
 
-//     result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), STR_bigg_than );
-//     ASSERT_TRUE( result );
-// }
+    result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), STR_bigg_than );
+    ASSERT_TRUE( result );
+}
 
-// TEST(StringRange, NoneOfAreNotBiggerThan)
-// {
-//     std::string A[]{ "aa", "zz", "aa", "aa", "aa" };
-//     bool result;
+TEST(StringRange, NoneOfAreNotBiggerThan)
+{
+    std::string A[]{ "aa", "zz", "aa", "aa", "aa" };
+    bool result;
 
-//     result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), STR_bigg_than );
-//     ASSERT_FALSE( result );
-// }
-// /*}}}*/
+    result = graal::none_of( std::begin(A), std::end(A), sizeof(A[0]), STR_bigg_than );
+    ASSERT_FALSE( result );
+}
+/*}}}*/
 // /* StringRange -> type1 equal() tests {{{*/
 // TEST(StringRange, AllAreEqualType1)
 // {

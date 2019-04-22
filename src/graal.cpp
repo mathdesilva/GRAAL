@@ -165,8 +165,22 @@ namespace graal{
 
 	bool none_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
-		// TODO: implement the function
-		return true;
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		bool res = true;
+
+		while( pfirst < plast )
+		{
+			if( p( pfirst ) )
+			{
+				res = false;
+				break;
+			}
+
+			pfirst += size;
+		}
+
+		return res;
 	}
 
 	bool equal( const void * first1, const void * last1, const void * first2, Equal eq )
