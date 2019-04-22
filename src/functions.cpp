@@ -126,40 +126,48 @@ namespace graal{
 	bool all_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
 		// TODO: implement the function
+		return true;
 	}
 
 	bool any_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
 		// TODO: implement the function
+		return true;
 	}
 
 	bool none_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
 		// TODO: implement the function
+		return true;
 	}
 
 	bool equal( const void * first1, const void * last1, const void * first2, Equal eq )
 	{
 		// TODO: implement the function
+		return true;
 	}
 
 	bool equal( const void * first1, const void * last1, const void * first2, const void * last2, Equal eq )
 	{
 		// TODO: implement the function
+		return true;
 	}
 
 	void * unique( void * first, void * last, std::size_t size, Equal eq )
 	{
 		// TODO: implement the function
+		return last;
 	}
 
 	void * partition( void * first, void * last, std::size_t size, Predicate p)
 	{
 		// TODO: implement the function
+		return last;
 	}
 
 	void * sort( void * first, std::size_t count, std::size_t size, Compare cmp )
 	{
 		// TODO: implement the function
+		return first;
 	}
 }
