@@ -107,7 +107,20 @@ namespace graal{
 
 	const void * find( const void * first, const void * last, std::size_t size, const void * value, Equal eq )
 	{
-		// TODO: implement the function
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+
+		while( pfirst < plast )
+		{
+			if( eq( pfirst, value ) )
+			{
+				return pfirst;
+			}
+
+			pfirst += size;
+		}
+
+		return plast;
 	}
 
 	bool all_of( const void * first, const void * last, std::size_t size, Predicate p )

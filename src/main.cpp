@@ -3,7 +3,7 @@
 
 #include "functions.h"
 
-bool less_than(const void * a, const void * b)
+bool less_than( const void * a, const void * b )
 {
 	const int *a_ = static_cast< const int * >(a);
 	const int *b_ = static_cast< const int * >(b);
@@ -16,6 +16,14 @@ bool greater_than_five( const void * num )
 	const int *num_ = static_cast< const int * >(num);
 
 	return ( *num_ > 5 );
+}
+
+bool equal( const void * a, const void * b )
+{
+	const int *a_ = static_cast< const int * >(a);
+	const int *b_ = static_cast< const int * >(b);
+
+	return ( *a_ == *b_ );
 }
 
 void printArray( void * first, void * last, std::size_t size )
@@ -141,8 +149,31 @@ int main( void )
 	auto result5_2 = graal::find_if( arr5_2.begin(), arr5_2.end(), sizeof(int), greater_than_five );
 	std::cout << "Result: ";
 	printArray( (int *)result5_2, arr5_2.end(), sizeof(int) );
+	std::cout << std::endl << std::endl;
+
+
+// ============================================================================
+//                                                       6 - FIND FUNCTION TEST
+// ============================================================================
+	std::cout << ">>> TEST 6: find function\n";
+	int value = 5;
+	std::array < int, 10 > arr6_1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	std::cout << "Using int array: ";
+	printArray( arr6_1.begin(), arr6_1.end(), sizeof(int) );
+	std::cout << std::endl;
+	auto result6_1 = graal::find( arr6_1.begin(), arr6_1.end(), sizeof(int), &value, equal );
+	std::cout << "Result: ";
+	printArray( (int *)result6_1, arr6_1.end(), sizeof(int) );
 	std::cout << std::endl;
 
+	std::array < int, 10 > arr6_2 = { 1, 2, 3, 4, 4, 4, 4, 4, 4, 4 };
+	std::cout << "Using int array: ";
+	printArray( arr6_2.begin(), arr6_2.end(), sizeof(int) );
+	std::cout << std::endl;
+	auto result6_2 = graal::find( arr6_2.begin(), arr6_2.end(), sizeof(int), &value, equal );
+	std::cout << "Result: ";
+	printArray( (int *)result6_2, arr6_2.end(), sizeof(int) );
+	std::cout << std::endl;
 
 	return EXIT_SUCCESS;
 }	
