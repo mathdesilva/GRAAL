@@ -229,25 +229,25 @@ TEST(IntRange, AllOfAreNotBiggerThan)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* IntRange -> any_of() tests {{{*/
-// TEST(IntRange, AnyOfAreBiggerThan)
-// {
-//     int A[]{ 1, -10, -20, -30, 2, 1, 1 };
-//     bool result;
+/* IntRange -> any_of() tests {{{*/
+TEST(IntRange, AnyOfAreBiggerThan)
+{
+    int A[]{ 1, -10, -20, -30, 2, 1, 1 };
+    bool result;
 
-//     result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), INT_bigg_than );
-//     ASSERT_TRUE( result );
-// }
+    result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), INT_bigg_than );
+    ASSERT_TRUE( result );
+}
 
-// TEST(IntRange, AnyOfAreNotBiggerThan)
-// {
-//     int A[]{ 1, 1, 1, 1, 1, 1, 1 };
-//     bool result;
+TEST(IntRange, AnyOfAreNotBiggerThan)
+{
+    int A[]{ 1, 1, 1, 1, 1, 1, 1 };
+    bool result;
 
-//     result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), INT_bigg_than );
-//     ASSERT_FALSE( result );
-// }
-// /*}}}*/
+    result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), INT_bigg_than );
+    ASSERT_FALSE( result );
+}
+/*}}}*/
 // /* IntRange -> none_of() tests {{{*/
 // TEST(IntRange, NoneOfAreBiggerThan)
 // {
@@ -764,25 +764,25 @@ TEST(CharRange, AllOfAreNotBiggerThan)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* CharRange -> any_of() tests {{{*/
-// TEST(CharRange, AnyOfAreBiggerThan)
-// {
-//     char A[]{ 'a', 'a', 'a', 'a', 'a', 'b', 'a', };
-//     bool result;
+/* CharRange -> any_of() tests {{{*/
+TEST(CharRange, AnyOfAreBiggerThan)
+{
+    char A[]{ 'a', 'a', 'a', 'a', 'a', 'b', 'a', };
+    bool result;
 
-//     result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), CHAR_bigg_than );
-//     ASSERT_TRUE( result );
-// }
+    result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), CHAR_bigg_than );
+    ASSERT_TRUE( result );
+}
 
-// TEST(CharRange, AnyOfAreNotBiggerThan)
-// {
-//     char A[]{ 'a', 'a', 'a', 'a', 'a', 'a', 'a', };
-//     bool result;
+TEST(CharRange, AnyOfAreNotBiggerThan)
+{
+    char A[]{ 'a', 'a', 'a', 'a', 'a', 'a', 'a', };
+    bool result;
 
-//     result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), CHAR_bigg_than );
-//     ASSERT_FALSE( result );
-// }
-// /*}}}*/
+    result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), CHAR_bigg_than );
+    ASSERT_FALSE( result );
+}
+/*}}}*/
 // /* CharRange -> none_of() tests {{{*/
 // TEST(CharRange, NoneOfAreBiggerThan)
 // {
@@ -1197,25 +1197,25 @@ TEST(StringRange, AllOfAreNotBiggerThan)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* StringRange -> any_of() tests {{{*/
-// TEST(StringRange, AnyOfAreBiggerThan)
-// {
-//     std::string A[]{ "aa", "aa", "aa", "aa", "bar", "aa", "aa" };
-//     bool result;
+/* StringRange -> any_of() tests {{{*/
+TEST(StringRange, AnyOfAreBiggerThan)
+{
+    std::string A[]{ "aa", "aa", "aa", "aa", "bar", "aa", "aa" };
+    bool result;
 
-//     result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), STR_bigg_than );
-//     ASSERT_TRUE( result );
-// }
+    result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), STR_bigg_than );
+    ASSERT_TRUE( result );
+}
 
-// TEST(StringRange, AnyOfAreNotBiggerThan)
-// {
-//     std::string A[]{ "aa", "aa", "aa", "aa", "aa", "aa", "aa" };
-//     bool result;
+TEST(StringRange, AnyOfAreNotBiggerThan)
+{
+    std::string A[]{ "aa", "aa", "aa", "aa", "aa", "aa", "aa" };
+    bool result;
 
-//     result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), STR_bigg_than );
-//     ASSERT_FALSE( result );
-// }
-// /*}}}*/
+    result = graal::any_of( std::begin(A), std::end(A), sizeof(A[0]), STR_bigg_than );
+    ASSERT_FALSE( result );
+}
+/*}}}*/
 // /* StringRange -> none_of() tests {{{*/
 // TEST(StringRange, NoneOfAreBiggerThan)
 // {

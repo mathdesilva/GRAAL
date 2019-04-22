@@ -145,8 +145,22 @@ namespace graal{
 
 	bool any_of( const void * first, const void * last, std::size_t size, Predicate p )
 	{
-		// TODO: implement the function
-		return true;
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		bool res = false;
+
+		while( pfirst < plast )
+		{
+			if( p( pfirst ) )
+			{
+				res = true;
+				break;
+			}
+
+			pfirst += size;
+		}
+
+		return res;
 	}
 
 	bool none_of( const void * first, const void * last, std::size_t size, Predicate p )
