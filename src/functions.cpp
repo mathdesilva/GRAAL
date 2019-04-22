@@ -34,7 +34,7 @@ namespace graal{
 		byte * pfirst = (byte *) first;
 		byte * plast = (byte *) last;
 		byte aux[ size ];
-		
+
 		plast -= size;
 		while( pfirst < plast )
 		{
@@ -49,7 +49,21 @@ namespace graal{
 
 	void * copy( const void * first, const void * last, const void * d_first, std::size_t size )
 	{
-		// TODO: implement the function
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		byte * pd_first = (byte *) d_first;
+
+		while( pfirst < plast )
+		{
+			std::memcpy( pd_first, pfirst, size );
+
+			pfirst += size;
+			pd_first += size;
+		}
+
+		void * res = pd_first;
+
+		return res; 
 	}
 
 	void * clone( const void * first, const void * last, std::size_t size )
