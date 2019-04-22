@@ -8,7 +8,14 @@ bool less_than(const void * a, const void * b)
 	const int *a_ = static_cast< const int * >(a);
 	const int *b_ = static_cast< const int * >(b);
 
-	return (*a_ < *b_);
+	return ( *a_ < *b_ );
+}
+
+bool greater_than_five( const void * num )
+{
+	const int *num_ = static_cast< const int * >(num);
+
+	return ( *num_ > 5 );
 }
 
 void printArray( void * first, void * last, std::size_t size )
@@ -110,8 +117,32 @@ int main( void )
 	auto result4 = graal::clone( arr4.begin(), arr4.end(), sizeof(int) );
 	std::cout << "Result: ";
 	printArray( result4, (int *)result4 + arr4.size(), sizeof(int) );
-	std::cout << std::endl;
+	std::cout << std::endl << std::endl;
 	delete[] (int *)result4;
+
+
+// ============================================================================
+//                                                    5 - FIND_IF FUNCTION TEST
+// ============================================================================
+	std::cout << ">>> TEST 5: find_if function\n";
+	std::array < int, 10 > arr5_1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	std::cout << "Using int array: ";
+	printArray( arr5_1.begin(), arr5_1.end(), sizeof(int) );
+	std::cout << std::endl;
+	auto result5_1 = graal::find_if( arr5_1.begin(), arr5_1.end(), sizeof(int), greater_than_five );
+	std::cout << "Result: ";
+	printArray( (int *)result5_1, arr5_1.end(), sizeof(int) );
+	std::cout << std::endl;
+
+	std::array < int, 10 > arr5_2 = { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 };
+	std::cout << "Using int array: ";
+	printArray( arr5_2.begin(), arr5_2.end(), sizeof(int) );
+	std::cout << std::endl;
+	auto result5_2 = graal::find_if( arr5_2.begin(), arr5_2.end(), sizeof(int), greater_than_five );
+	std::cout << "Result: ";
+	printArray( (int *)result5_2, arr5_2.end(), sizeof(int) );
+	std::cout << std::endl;
+
 
 	return EXIT_SUCCESS;
 }	

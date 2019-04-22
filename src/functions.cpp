@@ -89,7 +89,20 @@ namespace graal{
 
 	const void * find_if( const void * first, const void * last, std::size_t size, Predicate p )
 	{
-		// TODO: implement the function
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+
+		while( pfirst < plast )
+		{
+			if( p( pfirst ) )
+			{
+				return pfirst;
+			}
+
+			pfirst += size;
+		}
+
+		return plast;
 	}
 
 	const void * find( const void * first, const void * last, std::size_t size, const void * value, Equal eq )
