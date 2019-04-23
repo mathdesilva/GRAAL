@@ -377,78 +377,78 @@ TEST(IntRange, PartAreNotEqualType2)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* IntRange -> unique() tests {{{ */
-// TEST(IntRange, UniqueAllAre)
-// {
-//     int A[]{ 1, 10, 11, 20, 21, 30, 31 };
-//     int A_E[]{ 1, 10, 11, 20, 21, 30, 31 };
+/* IntRange -> unique() tests {{{ */
+TEST(IntRange, UniqueAllAre)
+{
+    int A[]{ 1, 10, 11, 20, 21, 30, 31 };
+    int A_E[]{ 1, 10, 11, 20, 21, 30, 31 };
 
-//     int * result;
-//     result = static_cast< int * >(
-//             graal::unique( 
-//                 std::begin(A), 
-//                 std::end(A), 
-//                 sizeof(A[0]), 
-//                 INT_equal_to
-//                 )
-//             );
+    int * result;
+    result = static_cast< int * >(
+            graal::unique( 
+                std::begin(A), 
+                std::end(A), 
+                sizeof(A[0]), 
+                INT_equal_to
+                )
+            );
 
-//     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
-// }
+    ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
+}
 
-// TEST(IntRange, UniqueManyAre)
-// {
-//     int A[]{ 1, 2, 5, 4, 5, 3, 3 };
-//     int A_E[]{ 1, 2, 5, 4, 3 };
+TEST(IntRange, UniqueManyAre)
+{
+    int A[]{ 1, 2, 5, 4, 5, 3, 3 };
+    int A_E[]{ 1, 2, 5, 4, 3 };
 
-//     int * result;
-//     result = static_cast< int * >(
-//             graal::unique( 
-//                 std::begin(A), 
-//                 std::end(A), 
-//                 sizeof(A[0]), 
-//                 INT_equal_to
-//                 )
-//             );
-//     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
-// }
+    int * result;
+    result = static_cast< int * >(
+            graal::unique( 
+                std::begin(A), 
+                std::end(A), 
+                sizeof(A[0]), 
+                INT_equal_to
+                )
+            );
+    ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
+}
 
-// TEST(IntRange, UniqueOneIs)
-// {
-//     int A[]{ 1, 5, 3, 3, 5, 10, 1 };
-//     int A_E[]{ 1, 5, 3, 10 };
+TEST(IntRange, UniqueOneIs)
+{
+    int A[]{ 1, 5, 3, 3, 5, 10, 1 };
+    int A_E[]{ 1, 5, 3, 10 };
 
-//     int * result;
-//     result = static_cast< int * >(
-//             graal::unique(
-//                 std::begin(A), 
-//                 std::end(A), 
-//                 sizeof(A[0]), 
-//                 INT_equal_to
-//                 )
-//             );
+    int * result;
+    result = static_cast< int * >(
+            graal::unique(
+                std::begin(A), 
+                std::end(A), 
+                sizeof(A[0]), 
+                INT_equal_to
+                )
+            );
 
-//     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
-// }
+    ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
+}
 
-// TEST(IntRange, UniqueNoneIs)
-// {
-//     int A[]{ 1, 2, 5, 2, 5, 1, 9, 9, 5, 2 };
-//     int A_E[]{ 1, 2, 5, 9 };
+TEST(IntRange, UniqueNoneIs)
+{
+    int A[]{ 1, 2, 5, 2, 5, 1, 9, 9, 5, 2 };
+    int A_E[]{ 1, 2, 5, 9 };
 
-//     int * result;
-//     result = static_cast< int * >(
-//             graal::unique( 
-//                 std::begin(A), 
-//                 std::end(A), 
-//                 sizeof(A[0]), 
-//                 INT_equal_to 
-//                 )
-//             );
+    int * result;
+    result = static_cast< int * >(
+            graal::unique( 
+                std::begin(A), 
+                std::end(A), 
+                sizeof(A[0]), 
+                INT_equal_to 
+                )
+            );
 
-//     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
-// }
-// /*}}}*/
+    ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
+}
+/*}}}*/
 // /* IntRange -> partition() tests {{{ */
 // TEST(IntRange, PartitionAllAreTrue)
 // {
@@ -912,78 +912,78 @@ TEST(CharRange, PartAreNotEqualType2)
     ASSERT_FALSE( result );
 }
 /*}}}*/
-// /* CharRange -> unique() tests {{{ */
-// TEST(CharRange, UniqueAllAre)
-// {
-//     char A[]{ 'a', 'c', 'd', 'b', 'e' };
-//     char A_E[]{ 'a', 'c', 'd', 'b', 'e' };
+/* CharRange -> unique() tests {{{ */
+TEST(CharRange, UniqueAllAre)
+{
+    char A[]{ 'a', 'c', 'd', 'b', 'e' };
+    char A_E[]{ 'a', 'c', 'd', 'b', 'e' };
 
-//     char * result;
-//     result = static_cast< char * >(
-//             graal::unique( 
-//                 std::begin(A), 
-//                 std::end(A), 
-//                 sizeof(A[0]), 
-//                 CHAR_equal_to
-//                 )
-//             );
+    char * result;
+    result = static_cast< char * >(
+            graal::unique( 
+                std::begin(A), 
+                std::end(A), 
+                sizeof(A[0]), 
+                CHAR_equal_to
+                )
+            );
 
-//     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
-// }
+    ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
+}
 
-// TEST(CharRange, UniqueManyAre)
-// {
-//     char A[]{ 'a', 'b', 'e', 'd', 'e', 'c', 'c' };
-//     char A_E[]{ 'a', 'b', 'e', 'd', 'c' };
+TEST(CharRange, UniqueManyAre)
+{
+    char A[]{ 'a', 'b', 'e', 'd', 'e', 'c', 'c' };
+    char A_E[]{ 'a', 'b', 'e', 'd', 'c' };
 
-//     char * result;
-//     result = static_cast< char * >(
-//             graal::unique( 
-//                 std::begin(A), 
-//                 std::end(A), 
-//                 sizeof(A[0]), 
-//                 CHAR_equal_to
-//                 )
-//             );
-//     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
-// }
+    char * result;
+    result = static_cast< char * >(
+            graal::unique( 
+                std::begin(A), 
+                std::end(A), 
+                sizeof(A[0]), 
+                CHAR_equal_to
+                )
+            );
+    ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
+}
 
-// TEST(CharRange, UniqueOneIs)
-// {
-//     char A[]{ 'a', 'f', 'c', 'c', 'f', 'k', 'a' };
-//     char A_E[]{ 'a', 'f', 'c', 'k' };
+TEST(CharRange, UniqueOneIs)
+{
+    char A[]{ 'a', 'f', 'c', 'c', 'f', 'k', 'a' };
+    char A_E[]{ 'a', 'f', 'c', 'k' };
 
-//     char * result;
-//     result = static_cast< char * >(
-//             graal::unique(
-//                 std::begin(A), 
-//                 std::end(A), 
-//                 sizeof(A[0]), 
-//                 CHAR_equal_to
-//                 )
-//             );
+    char * result;
+    result = static_cast< char * >(
+            graal::unique(
+                std::begin(A), 
+                std::end(A), 
+                sizeof(A[0]), 
+                CHAR_equal_to
+                )
+            );
 
-//     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
-// }
+    ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
+}
 
-// TEST(CharRange, UniqueNoneIs)
-// {
-//     char A[]{ 'a', 'b', 'h', 'b', 'h', 'a', 'j', 'j' };
-//     char A_E[]{ 'a', 'b', 'h', 'j' };
+TEST(CharRange, UniqueNoneIs)
+{
+    char A[]{ 'a', 'b', 'h', 'b', 'h', 'a', 'j', 'j' };
+    char A_E[]{ 'a', 'b', 'h', 'j' };
 
-//     char * result;
-//     result = static_cast< char * >(
-//             graal::unique( 
-//                 std::begin(A), 
-//                 std::end(A), 
-//                 sizeof(A[0]), 
-//                 CHAR_equal_to 
-//                 )
-//             );
+    char * result;
+    result = static_cast< char * >(
+            graal::unique( 
+                std::begin(A), 
+                std::end(A), 
+                sizeof(A[0]), 
+                CHAR_equal_to 
+                )
+            );
 
-//     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
-// }
-// /*}}}*/
+    ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ));
+}
+/*}}}*/
 // /* CharRange -> partition() tests {{{ */
 // TEST(CharRange, PartitionAllAreTrue)
 // {

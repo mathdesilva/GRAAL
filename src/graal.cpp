@@ -230,8 +230,43 @@ namespace graal{
 
 	void * unique( void * first, void * last, std::size_t size, Equal eq )
 	{
-		// TODO: implement the function
-		return last;
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		byte * slow = (byte *) first;
+		byte * verif = (byte *) first;
+		byte * auxpfirst = (byte *) first;
+		byte aux[ size ];
+
+		bool find;
+
+		while( pfirst < plast )
+		{
+			find = false;
+			verif = auxpfirst;
+
+			while( verif < slow )
+			{
+				if( eq( verif, pfirst ) )
+				{
+					find = true;
+					break;
+				}
+
+				verif += size;
+			}
+
+			if( not find )
+			{
+				std::memcpy( aux, pfirst, size );
+				std::memcpy( pfirst, slow, size );
+				std::memcpy( slow, aux, size );
+				slow += size;
+			}
+
+			pfirst += size;
+		}
+
+		return slow;
 	}
 
 	void * partition( void * first, void * last, std::size_t size, Predicate p)
