@@ -271,8 +271,25 @@ namespace graal{
 
 	void * partition( void * first, void * last, std::size_t size, Predicate p)
 	{
-		// TODO: implement the function
-		return last;
+		byte * pfirst = (byte *) first;
+		byte * plast = (byte *) last;
+		byte * slow = (byte *) first;
+		byte aux[ size ];
+
+		while( pfirst < plast )
+		{
+			if( p( pfirst ) )
+			{
+				std::memcpy( aux, pfirst, size );
+				std::memcpy( pfirst, slow, size );
+				std::memcpy( slow, aux, size );
+				slow += size;
+			}
+
+			pfirst += size;
+		}
+
+		return slow;
 	}
 
 	void * sort( void * first, std::size_t count, std::size_t size, Compare cmp )
