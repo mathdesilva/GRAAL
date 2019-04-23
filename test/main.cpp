@@ -502,45 +502,45 @@ TEST(IntRange, PartitionNoneIsTrue)
     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
 }
 /*}}}*/
-// /* IntRange -> sort() tests {{{*/
-// TEST(IntRange, BasicSort)
-// {
-//     int A[]{ 2, 5, 3, 6, 1, 30, 10 };
-//     int A_O[]{ 1, 2, 3, 5, 6, 10, 30 };
+/* IntRange -> sort() tests {{{*/
+TEST(IntRange, BasicSort)
+{
+    int A[]{ 2, 5, 3, 6, 1, 30, 10 };
+    int A_O[]{ 1, 2, 3, 5, 6, 10, 30 };
 
-//     std::cout << "Before:\t";
-//     for( auto &i : A ) std::cout << i << " ";
-//     std::cout << std::endl;
+    std::cout << "Before:\t";
+    for( auto &i : A ) std::cout << i << " ";
+    std::cout << std::endl;
 
-//     using_lib::qsort( 
-//         std::begin(A), 
-//         std::distance(std::begin(A), std::end(A)), 
-//         sizeof(A[0]), 
-//         INT_sort_comp 
-//     );
+    using_lib::sort( 
+        std::begin(A), 
+        std::distance(std::begin(A), std::end(A)), 
+        sizeof(A[0]), 
+        INT_sort_comp 
+    );
 
-//     std::cout << "After:\t";
-//     for( auto &i : A ) std::cout << i << " ";
-//     std::cout << std::endl;
+    std::cout << "After:\t";
+    for( auto &i : A ) std::cout << i << " ";
+    std::cout << std::endl;
 
-//     bool result = std::equal( std::begin(A), std::end(A), std::begin(A_O) );
-//     ASSERT_TRUE(result);
-// }
+    bool result = std::equal( std::begin(A), std::end(A), std::begin(A_O) );
+    ASSERT_TRUE(result);
+}
 
-// TEST(IntRange, DuplicatedMembersSort){
-//     int A[]{ 7, 6, 5, 4, 1, 1, 1 };
-//     int A_O[]{ 1, 1, 1, 4, 5, 6, 7 };
+TEST(IntRange, DuplicatedMembersSort){
+    int A[]{ 7, 6, 5, 4, 1, 1, 1 };
+    int A_O[]{ 1, 1, 1, 4, 5, 6, 7 };
 
-//     using_lib::qsort( 
-//         std::begin(A), 
-//         std::distance(std::begin(A), std::end(A)), 
-//         sizeof(A[0]), 
-//         INT_sort_comp 
-//     );
+    using_lib::sort( 
+        std::begin(A), 
+        std::distance(std::begin(A), std::end(A)), 
+        sizeof(A[0]), 
+        INT_sort_comp 
+    );
 
-//     bool result = std::equal( std::begin(A), std::end(A), std::begin(A_O) );
-//     ASSERT_TRUE(result);
-// }
+    bool result = std::equal( std::begin(A), std::end(A), std::begin(A_O) );
+    ASSERT_TRUE(result);
+}
 /*}}}*/
 /*}}}*/
 
@@ -1037,34 +1037,34 @@ TEST(CharRange, PartitionNoneIsTrue)
     ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
 }
 /*}}}*/
-// /* CharRange -> sort() tests {{{*/
-// TEST(CharRange, BasicSort){
-//     char A[]{ 'g', 'f', 'e', 'd', 'c', 'b', 'a' };
-//     char A_O[]{ 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
+/* CharRange -> sort() tests {{{*/
+TEST(CharRange, BasicSort){
+    char A[]{ 'g', 'f', 'e', 'd', 'c', 'b', 'a' };
+    char A_O[]{ 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
 
-//     using_lib::qsort( 
-//         std::begin(A), 
-//         std::distance(std::begin(A), std::end(A)), 
-//         sizeof(A[0]), 
-//         CHAR_sort_comp );
+    using_lib::sort( 
+        std::begin(A), 
+        std::distance(std::begin(A), std::end(A)), 
+        sizeof(A[0]), 
+        CHAR_sort_comp );
 
-//     bool result = std::equal( std::begin(A), std::end(A), std::begin(A_O) );
-//     ASSERT_TRUE(result);
-// }
+    bool result = std::equal( std::begin(A), std::end(A), std::begin(A_O) );
+    ASSERT_TRUE(result);
+}
 
-// TEST(CharRange, DuplicatedMembersSort){
-//     char A[]{ 'g', 'f', 'e', 'd', 'a', 'a', 'a' };
-//     char A_O[]{ 'a', 'a', 'a', 'd', 'e', 'f', 'g' };
+TEST(CharRange, DuplicatedMembersSort){
+    char A[]{ 'g', 'f', 'e', 'd', 'a', 'a', 'a' };
+    char A_O[]{ 'a', 'a', 'a', 'd', 'e', 'f', 'g' };
 
-//     using_lib::qsort( 
-//         std::begin(A), 
-//         std::distance(std::begin(A), std::end(A)), 
-//         sizeof(A[0]), 
-//         CHAR_sort_comp );
+    using_lib::sort( 
+        std::begin(A), 
+        std::distance(std::begin(A), std::end(A)), 
+        sizeof(A[0]), 
+        CHAR_sort_comp );
 
-//     bool result = std::equal( std::begin(A), std::end(A), std::begin(A_O) );
-//     ASSERT_TRUE(result);
-// }
+    bool result = std::equal( std::begin(A), std::end(A), std::begin(A_O) );
+    ASSERT_TRUE(result);
+}
 /*}}}*/
 /*}}}*/
 

@@ -34,7 +34,7 @@ namespace graal{
 
 	void * partition( void * first, void * last, std::size_t size, Predicate p);
 
-	void * sort( void * first, std::size_t count, std::size_t size, Compare cmp );
+	void sort( void * first, std::size_t count, std::size_t size, Compare cmp );
 
 }
 

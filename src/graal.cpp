@@ -292,9 +292,34 @@ namespace graal{
 		return slow;
 	}
 
-	void * sort( void * first, std::size_t count, std::size_t size, Compare cmp )
+	void sort( void * first, std::size_t count, std::size_t size, Compare cmp )
 	{
-		// TODO: implement the function
-		return first;
+		byte * pfirst = (byte *) first;
+		byte * start = (byte *) first;
+		byte * smallest = nullptr;
+		byte aux[ size ];
+
+		for(int i = 0; i < (int)count; i++)
+		{	
+			pfirst = start;
+			smallest = start;
+
+			for(int j = i; j < (int)count; j++)
+			{
+				if( cmp( pfirst, smallest ) )
+				{
+					smallest = pfirst;
+				}
+
+				pfirst += size;
+			}
+
+			std::memcpy( aux, start, size );
+			std::memcpy( start, smallest, size );
+			std::memcpy( smallest, aux, size );
+
+			start += size;
+		}
 	}
+
 }
