@@ -10,7 +10,7 @@ The main objective with this assignemnt is to introduce void pointers, functions
 * `cmake`
 * `make`
 * `g++`
-* `(google tests)[https://github.com/google/googletest]`
+* (`google tests`)[https://github.com/google/googletest]
 
 
 ### Compile
